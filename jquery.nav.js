@@ -98,9 +98,6 @@
           o.end();
         }
       }
-      if (o.changeHash) {
-        window.location.hash = position;
-      }
     };
     
     onePageNav.init = function($this, o) {
