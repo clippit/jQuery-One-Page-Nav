@@ -55,8 +55,14 @@
     };
     
     onePageNav.adjustNav = function($this, $el, curClass) {
-      $this.find('.'+curClass).removeClass(curClass);
-      $el.addClass(curClass);
+      var $original = $this.find('.'+curClass);
+      if ($original.find('a').attr('href') != $el.find('a').attr('href')) {
+        $original.removeClass(curClass);
+        $el.addClass(curClass);
+        return true;
+      } else {
+        return false;
+      }
     };
     
     onePageNav.getPositions = function($this, o) {
@@ -88,7 +94,9 @@
           position = onePageNav.getSection(windowTop);
           
       if(position !== '') {
-        onePageNav.adjustNav($this,$this.find('a[href=#'+position+']').parent(), o.currentClass);
+        if ( onePageNav.adjustNav($this,$this.find('a[href=#'+position+']').parent(), o.currentClass) && o.end ) {
+          o.end();
+        }
       }
       if (o.changeHash) {
         window.location.hash = position;
