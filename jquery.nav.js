@@ -34,7 +34,8 @@
         }
         onePageNav.adjustNav($this, $par, o.currentClass);
         $win.unbind('.onePageNav');
-        $.scrollTo(newLoc, o.scrollSpeed, {easing : o.easing}, {
+        $.scrollTo(newLoc, o.scrollSpeed, {
+          easing: o.easing,
           offset: {
             top: -o.scrollOffset
           },
