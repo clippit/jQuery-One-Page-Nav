@@ -1,4 +1,4 @@
-/*
+/**
  * jQuery One Page Nav Plugin
  * http://github.com/davist11/jQuery-One-Page-Nav
  *
@@ -13,7 +13,8 @@
  * $('#nav').onePageNav({
  *   currentClass: 'current',
  *   changeHash: false,
- *   scrollSpeed: 750
+ *   scrollSpeed: 750,
+ *   easing: 'easeInOutCirc'
  * });
  */
 ;(function($) {
